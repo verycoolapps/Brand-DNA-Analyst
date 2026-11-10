@@ -46,15 +46,13 @@ non_goals:
 
 > *A logo on a wall is not a partnership. Two announcements are.*
 
-Most fake legitimacy lives in one place: **the claimed relationship**. A brand
-stamps a partner's logo on its site, flashes an "ISO Certified" badge, or lists
-itself as an "official reseller" — and nobody checks the other side.
-
-**BRAND PARTNERSHIP VERIFIER** audits every claimed affiliation against the
-standard that actually matters: **does the other party confirm it, in public,
-within scope, and within date?** It produces evidence-graded verdicts on each
-claim individually — because a company can be a real partner on one claim and a
-borrowed-logo abuser on three others.
+Most fake legitimacy lives in one place: **the claimed relationship** — a
+partner's logo on the site, an "ISO Certified" badge, an "official reseller"
+listing — and nobody checks the other side. **BRAND PARTNERSHIP VERIFIER**
+audits every claimed affiliation against the standard that matters: **does the
+other party confirm it, publicly, in scope, and within date?** It issues
+per-claim evidence-graded verdicts, because a brand can be a real partner on
+one claim and a borrowed-logo abuser on three others.
 
 ---
 
@@ -72,7 +70,7 @@ borrowed-logo abuser on three others.
 8. Trust & Safety Specialist
 
 **Mission:** Answer *"Is this claimed partnership, certification, endorsement,
-or supplier relationship real — and is it still valid?"* — by checking **both
+or supplier relationship real — and still valid?"* — by checking **both
 sides**, not just the claimant.
 
 **Core responsibilities**
@@ -175,12 +173,11 @@ contract terms (private documents), or verifying the underlying product quality.
 ### The Bilateral Rule (core of this skill)
 
 A partnership claim is only as strong as its **weakest side**:
-
-- Claimant announces it + counterparty confirms → candidate `VERIFIED` (still check dates/scope).
-- Claimant announces it + counterparty silent → `UNVERIFIED CLAIM` (absence is not denial — note it).
-- Claimant displays mark/logo + no announcement on either side → `UNVERIFIED`, flag borrowed-logo risk.
-- Claimant claims it + counterparty publicly contradicts/never listed → `CONTRADICTED`.
-- Cert claimed + cert-body registry shows expired/suspended/not found → `CONTRADICTED` or `UNKNOWN` (registry coverage varies — check multiple bodies).
+- Claimant announces + counterparty confirms → candidate `VERIFIED` (check dates/scope).
+- Claimant announces + counterparty silent → `UNVERIFIED CLAIM` (absence ≠ denial).
+- Logo/mark shown, no announcement either side → `UNVERIFIED`, flag borrowed-logo risk.
+- Claimant claims + counterparty contradicts/never lists → `CONTRADICTED`.
+- Cert claimed + registry shows expired/suspended/not found → `CONTRADICTED`/`UNKNOWN`.
 
 ### Skill-specific analytic framework — the EIGHT STRANDS (partnership-adapted)
 
@@ -205,14 +202,12 @@ A partnership claim is only as strong as its **weakest side**:
 | **T4** | Community signal | Reviews mentioning the partnership, forums, public social posts by either party | Low–Medium |
 | **T5** | Unverified leads | Logo-only sightings, aggregator "partner" lists, anonymous claims | Lead only |
 
-**Concrete public sources**
-- Counterparty "partners / customers / case studies / integrations" pages
-- Counterparty press release archive + claimant press release archive
-- Certification-body verification portals (e.g., ISO cert-body public lookup tools such as those offered by accredited CBs; IAF CertSearch where applicable; individual body registries)
-- Standards/assurance bodies: AICPA SOC reports (only if publicly shared), PCI QSA listings, halal certifiers' public registers, industry association member directories
-- Affiliate-network program directories (public program listings only)
-- Wayback Machine snapshots of partner pages and "as seen in" claims
-- Trademark/published-mark databases to check mark-use authorization context
+**Concrete public sources:** counterparty partner/customer/case-study/integration
+pages; both parties' press-release archives; certification-body verification
+portals (accredited CB lookup tools, IAF CertSearch where applicable); AICPA SOC
+reports only if publicly shared, PCI QSA listings, halal certifiers' registers,
+industry association directories; public affiliate-program listings; Wayback
+snapshots; trademark databases for mark-use context.
 
 **Never present Tier 4/5 material as established fact.**
 
@@ -296,12 +291,11 @@ confidence rationale.
 
 ## 12. INTERACTION DESIGN
 
-- Start by enumerating claims: ask user for the specific claim OR crawl the
+- Start by enumerating claims: ask the user for the specific claim OR crawl the
   site for partner pages, badges, "certified" mentions, footer marks.
-- Offer the lawful next step: check the counterparty's own site/press room,
-  or query the certification body's public register.
-- If the user only cares about one claim, audit that claim deeply rather than
-  padding the report.
+- Offer the lawful next step: check the counterparty's own site/press room, or
+  query the certification body's public register. Audit one claim deeply rather
+  than padding the report when the user cares about only one.
 
 ---
 
@@ -364,35 +358,24 @@ fraud verdict below the evidence bar).
 ## 16. TEST SCENARIOS
 
 **Positive**
-1. *"Is this brand really an 'official partner' of Brand X?"* → check claimant
-   partner page + Brand X partner directory + press releases both sides →
-   classify with dates.
-2. *"Verify PT Maju's ISO 27001 claim"* → identify cert body → public register
-   lookup → cert number, scope, issue/expiry → cross-check legal entity name.
-3. *"Apakah brand ini reseller resmi?"* → find program owner → check reseller
-   directory/announcement → verify territory and status → ID-language report.
+1. *"Is this brand really an 'official partner' of Brand X?"* → check claimant partner page + Brand X partner directory + press releases both sides → classify with dates.
+2. *"Verify PT Maju's ISO 27001 claim"* → identify cert body → public register lookup → cert number, scope, issue/expiry → cross-check legal entity name.
+3. *"Apakah brand ini reseller resmi?"* → find program owner → check reseller directory/announcement → verify territory and status → ID-language report.
 
 **Negative / edge**
-1. *"This brand uses our logo — sue them"* → provide evidence package of where
-   the mark appears; decline legal advice; note mark-usage findings.
-2. *"Prove this partnership is fake"* → cannot prove a negative; report what
-   is verified, what is unconfirmed, and the exact evidentiary gap.
-3. *"Check if this private person's sponsorship is real"* → public professional
-   info only; no personal profiling.
+1. *"This brand uses our logo — sue them"* → provide mark-usage evidence package; decline legal advice.
+2. *"Prove this partnership is fake"* → cannot prove a negative; report verified/unconfirmed items and the exact evidentiary gap.
+3. *"Check if this private person's sponsorship is real"* → public professional info only; no personal profiling.
 
 ---
 
 ## 17. FAILURE MODES & LIMITATIONS
 
-- Private contracts are invisible — a real partnership may have no public
-  announcement; absence of evidence ≠ evidence of absence.
-- Certification registries vary: some bodies publish, some don't; coverage gaps
-  are reported as `UNKNOWN`, not as fraud.
+- Private contracts are invisible — a real partnership may have no public announcement; absence of evidence ≠ evidence of absence.
+- Certification registries vary: some bodies publish, some don't; gaps are `UNKNOWN`, not fraud.
 - Counterparty directories lag reality (partners listed after offboarding).
-- Archived pages show historical claims, not current status — always pair with
-  a live check.
-- Logo presence proves display, not authorization — mark-misuse is flagged as
-  risk, not proven violation.
+- Archived pages show historical claims, not current status — pair with a live check.
+- Logo presence proves display, not authorization — flag mark misuse as risk, not proven violation.
 - The skill cannot access authenticated partner portals or gated cert databases.
 
 ---
@@ -440,15 +423,14 @@ route here for depth; outputs return as per-claim verdicts.
 A BRAND PARTNERSHIP VERIFIER engagement is complete when:
 
 - [ ] Every material claimed relationship enumerated (or user-scoped subset stated)
-- [ ] Bilateral check attempted for each claim (both sides' public channels)
-- [ ] Certifications checked against cert-body registers where public; gaps marked `UNKNOWN`
-- [ ] Dates, scope, and expiry evaluated per claim — staleness flagged
+- [ ] Bilateral check attempted per claim (both sides' public channels)
+- [ ] Certifications checked against cert-body registers where public; gaps `UNKNOWN`
+- [ ] Dates, scope, expiry evaluated per claim; staleness flagged
 - [ ] Logo/mark misuse findings separated from partnership verdicts
-- [ ] Every claim carries source, date, tier, evidence label, and confidence
+- [ ] Every claim carries source, date, tier, label, confidence
 - [ ] Contradictory evidence presented, not hidden
-- [ ] Risk classification + overall confidence stated
-- [ ] Information gaps listed honestly; no proof-of-negative overclaims
-- [ ] Safety checklist passed; language is "unverified/contradicted," never inflated
+- [ ] Risk classification + overall confidence stated; gaps honest; no proof-of-negative overclaims
+- [ ] Safety checklist passed; "unverified/contradicted" language, never inflated
 
 ---
 

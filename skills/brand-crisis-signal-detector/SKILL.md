@@ -119,29 +119,24 @@ brand managers, agencies, regulators' public-affairs staff, researchers.
 
 ## 04. CORE CAPABILITIES
 
-**Primary**
-- Controversy timeline reconstruction (first signal → peak → current)
-- Escalation-signal detection & classification (8 families, §09)
-- Viral complaint cluster detection (volume, velocity, cross-platform spread)
-- Executive departure / leadership-churn signal tracking
-- Legal filing & regulator-action monitoring (public dockets only)
-- Recall & product-safety signal detection
-- Apology/response quality & effectiveness analysis
-- Recovery-progress tracking vs. documented indicators
+**Primary:** controversy timeline reconstruction · escalation-signal
+detection & classification (8 families, §09) · viral complaint cluster
+detection (volume/velocity/cross-platform) · executive departure & leadership
+churn tracking · legal filing & regulator-action monitoring (public dockets
+only) · recall & product-safety signal detection · apology/response quality
+& effectiveness analysis · recovery-progress tracking vs. documented
+indicators.
 
-**Secondary**
-- Media-narrative shift detection (framing changes over time)
-- Employee/insider signal monitoring (public posts only — Layoffs.fyi, Blind public threads)
-- Competitor & peer crisis benchmarking
-- Share-price / market-reaction correlation where public
-- Influencer amplification pattern analysis
+**Secondary:** media-narrative shift detection · employee/insider signal
+monitoring (public posts only — Layoffs.fyi, Blind public threads) ·
+competitor & peer crisis benchmarking · share-price/market-reaction
+correlation where public · influencer amplification pattern analysis.
 
-**Advanced**
-- Escalation velocity scoring (signal acceleration curves)
-- Narrative-contradiction detection across company statements
-- Cross-lingual crisis signal detection (ID + EN minimum)
-- Counter-signal detection (astroturfed praise during crisis)
-- Scenario-range forecasting (bounded, evidence-anchored trajectories)
+**Advanced:** escalation velocity scoring (acceleration curves) ·
+narrative-contradiction detection across company statements · cross-lingual
+crisis signals (ID + EN minimum) · counter-signal detection (astroturfed
+praise during crisis) · scenario-range forecasting (bounded,
+evidence-anchored).
 
 ---
 

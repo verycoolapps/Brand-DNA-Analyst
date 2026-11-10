@@ -27,7 +27,6 @@ triggers:
   - "claim vs evidence gap"
   - "what changed in their story"
   - "is this brand's story consistent"
-  - "greenwashing check"
   - "verify company claims"
   - "cek klaim brand"
   - "apakah brand ini bohong"
@@ -113,10 +112,9 @@ evidence-graded findings.
 | Metric inflation | "Record growth," "best-in-class," "trusted by millions" — uncheckable or false |
 | Filing vs. press gap | The 10-K says one thing; the press release says another |
 
-**Expected outcomes:** a narrative dossier where every extracted claim is
-tagged `VERIFIED / SUPPORTED / CONTRADICTED / UNVERIFIED CLAIM / INTERPRETATION /
-UNKNOWN`, plotted on a dated timeline, with a consistency score and a
-claim-vs-evidence gap assessment.
+**Expected outcomes:** a narrative dossier where every claim is tagged
+`VERIFIED / SUPPORTED / CONTRADICTED / UNVERIFIED CLAIM / INTERPRETATION /
+UNKNOWN`, on a dated timeline with a consistency score and gap assessment.
 
 ---
 
@@ -128,9 +126,8 @@ claim-vs-evidence gap assessment.
 | **PROFESSIONAL** | Full claim ledger, source-tier citations, contradiction matrix, timeline table, confidence per finding |
 | **EXPERT** | Hypothesis-driven: pre-register expected contradictions, test falsification paths, strand-correlation matrix, sensitivity notes |
 
-Audiences: consumers deciding trust, journalists fact-checking, analysts and
-investors, PR professionals auditing their own or competitor messaging,
-researchers, regulators' public-interest work, NGOs monitoring corporate claims.
+Audiences: consumers, journalists, analysts, investors, PR teams, researchers,
+regulators' public-interest work, NGOs monitoring corporate claims.
 
 ---
 
@@ -215,13 +212,12 @@ ownership verification, hand off to `brand-dna-analyst` first.
 
 **Never present Tier 4/5 material as established fact.**
 
-Concrete public sources: corporate newsroom pages, SEC EDGAR / IDX / OJK /
-Companies House filings, Wayback Machine snapshots of press pages, earnings
-call transcripts (public), official social accounts, partner press pages,
-regulator enforcement notices, reputable news archives, NGO/think-tank
-reports *about* claims (e.g., climate-pledge trackers).
+Concrete public sources: corporate newsrooms, SEC EDGAR / IDX / OJK /
+Companies House filings, Wayback snapshots, public earnings transcripts,
+official social accounts, partner press pages, regulator notices, reputable
+news archives, NGO/think-tank claim trackers (e.g., climate-pledge monitors).
 
-**Collection discipline:** every harvested statement gets
+**Collection discipline:** every statement gets
 `URL · channel · publish date · access date · verbatim quote/excerpt`.
 
 ---
@@ -231,11 +227,10 @@ reports *about* claims (e.g., climate-pledge trackers).
 Before a statement enters the claim ledger:
 
 1. **Authorship** — official channel / verified account / third-party report?
-   Label accordingly.
-2. **Date** — publish date vs. event date; flag backdated or recycled content.
-3. **Context** — full statement, not a cropped screenshot; note secondary excerpts.
-4. **Archive** — for high-stakes claims, snapshot via Wayback; store the archive URL.
-5. **Attribution** — CEO vs. corporate statement vs. spokesperson; spokesperson
+2. **Date** — publish vs. event date; flag backdated or recycled content.
+3. **Context** — full statement, not a cropped screenshot.
+4. **Archive** — for high-stakes claims, snapshot via Wayback; store URL.
+5. **Attribution** — CEO vs. corporate vs. spokesperson; spokesperson
    language ≠ executive conviction.
 
 ---
@@ -445,8 +440,7 @@ A BRAND NARRATIVE ANALYST engagement is complete when:
 - Persistent statement corpus with diff-alerting for watched brands
 - Automated Wayback-diff pipeline for quietly edited claims
 - Claim-embedding similarity to auto-detect narrative drift
-- Multilingual coverage beyond ID/EN
-- Structured JSON claim-ledger export for flagship synthesis
+- Multilingual coverage beyond ID/EN; structured JSON claim-ledger export
 - Apology-effectiveness rubric calibrated against documented outcomes
 - Cross-brand narrative benchmarking datasets
 

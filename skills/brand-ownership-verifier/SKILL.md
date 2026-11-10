@@ -8,9 +8,8 @@ description: >-
   consistency, officer histories, and ultimate beneficial owner (UBO) clues
   from public disclosures. Produces evidence-graded ownership maps with
   confidence levels. Use when tracing who is behind a brand, auditing a
-  claimed parent company, detecting shell-entity red flags, verifying a
-  company's real jurisdiction and control structure, or answering "siapa
-  pemilik brand ini?" / "who owns this company?"
+  claimed parent company, detecting shell-entity red flags, or answering
+  "siapa pemilik brand ini?" / "who owns this company?"
 version: 1.0.0
 metadata:
   category: OSINT / Brand & Reputation Intelligence
@@ -38,7 +37,6 @@ triggers:
   - "cek kepemilikan perusahaan"
   - "siapa di balik brand ini"
   - "trace kepemilikan perusahaan"
-  - "apakah ini shell company"
 non_goals:
   - accessing private or leaked databases
   - bypassing registry paywalls or authentication
@@ -53,8 +51,8 @@ non_goals:
 
 A brand's marketing says who it wants you to think owns it. Registries say
 who legally does. **BRAND OWNERSHIP VERIFIER** reconstructs the verifiable
-control chain — registered entities, parents, subsidiaries, agents,
-officers, addresses, and the public UBO trail — and grades every link.
+control chain — entities, parents, subsidiaries, agents, officers,
+addresses, UBO trail — and grades every link.
 
 ---
 
@@ -81,8 +79,7 @@ evidence, not brand narrative.
 **Non-goals**
 - Never access private registries, leaks, or authenticated data.
 - Never assert a private person's identity beyond public filings.
-- Never convert structural opacity into a fraud accusation.
-- Never provide legal, AML, or compliance sign-off.
+- Never convert structural opacity into a fraud accusation or legal/AML sign-off.
 
 ---
 
@@ -98,7 +95,7 @@ evidence, not brand narrative.
 
 **Expected outcome:** an ownership map where every entity node carries a
 registry citation, every edge carries evidence of control, and every gap is
-stated as `UNKNOWN` — never silently bridged.
+`UNKNOWN` — never silently bridged.
 
 ---
 
@@ -111,7 +108,7 @@ stated as `UNKNOWN` — never silently bridged.
 | **EXPERT** | Multi-jurisdiction correlation, nominee/shell hypothesis testing, filing timeline, confidence calibration |
 
 Audiences: consumers vetting sellers, founders, investors in early due
-due diligence, journalists, compliance researchers, marketplace trust teams.
+diligence, journalists, compliance researchers, marketplace trust teams.
 
 ---
 
@@ -120,23 +117,19 @@ due diligence, journalists, compliance researchers, marketplace trust teams.
 **Primary**
 - Registry chain tracing (NIB/OSS, Companies House, SEC EDGAR, state SoS,
   ACRA, HK CR, EU national registries)
-- Parent/subsidiary and affiliate mapping from filings
-- Registered-agent and officer/director extraction
-- Filing-address consistency analysis
-- UBO clue collection to the public-record boundary
+- Parent/subsidiary mapping from filings; agent/officer extraction
+- Filing-address consistency; UBO clue collection to public boundary
 
 **Secondary**
 - Shell-entity heuristic scoring (shared agents, addresses, dates)
-- Officer-history timeline (appointments, resignations, conflicts)
-- Name-similarity and typo-squat entity detection
+- Officer-history timeline; name-similarity/typo-squat detection
 - Cross-jurisdiction duplicate-entity matching
 - Trademark-owner vs. operating-entity mismatch detection
 
 **Advanced**
 - Multi-hop control-chain reconstruction with per-edge confidence
-- Nominee/agent-network clustering across subjects
-- Filing-amendment diffing; hypothesis tests with falsification attempts
-- Evidence-provenance tracking for re-verification
+- Nominee/agent-network clustering; filing-amendment diffing
+- Hypothesis tests with falsification; evidence-provenance tracking
 
 **Unique**
 - "Ownership plausibility" scoring vs. claimed structure
@@ -193,8 +186,8 @@ registry credentials or leaked data.
 ### Golden rules
 
 - A brand claim is not a registry fact.
-- An entity's existence is not proof of control by the brand.
-- A missing filing is not proof of concealment (coverage varies).
+- Entity existence ≠ proof of control by the brand.
+- A missing filing ≠ proof of concealment (coverage varies).
 - Shared registered agents are common — pattern, not proof, alone.
 - Always separate registry evidence from interpretation.
 
@@ -215,10 +208,9 @@ registry credentials or leaked data.
 Concrete public sources (access varies by jurisdiction):
 - **Indonesia:** NIB/OSS (oss.go.id) — NIB no., KBLI, status, domicile; AHU
   (ahu.go.id) for PT deeds; DJKI for trademark owner.
-- **US:** SEC EDGAR (public companies, subsidiaries in Exhibit 21), state
-  SoS registries (DE, CA, WY, NV common), FINRA BrokerCheck for individuals.
-- **UK:** Companies House — officers, PSC (persons with significant
-  control), filing history, charges.
+- **US:** SEC EDGAR (Exhibit 21 subsidiary lists), state SoS registries
+  (DE/CA/WY/NV common), FINRA BrokerCheck.
+- **UK:** Companies House — officers, PSC, filing history, charges.
 - **EU:** national registries via BRIS/EBR links; OpenCorporates as index.
 - **SG/HK/AU:** ACRA BizFile, HK CRIC, ASIC Connect.
 - **Cross-border:** WHOIS/RDAP, trademark owner fields, app-store developer
@@ -234,8 +226,8 @@ Before relying on any registry record:
 1. **Current?** — check last-updated/filing date; stale → recency flag.
 2. **Identity?** — registration number + jurisdiction, not name alone.
 3. **Status?** — active vs. dissolved vs. struck off vs. in liquidation.
-4. **Cross-check** ≥1 independent surface (e.g., SEC exhibit + state
-   registry; Companies House PSC + trademark owner).
+4. **Cross-check** ≥1 independent surface (SEC exhibit + state registry;
+   Companies House PSC + trademark owner).
 5. **Date-stamp everything** — cite access date.
 
 If a record can't be re-fetched or exists only via aggregator mirror,
@@ -272,6 +264,8 @@ A plausible chain with one broken link is a finding, not a footnote.
 
 Every finding is classified:
 
+| Label | Meaning |
+|---|---|
 | `VERIFIED` | ≥2 independent Tier-1/2 sources, or registry record re-fetched live |
 | `SUPPORTED` | Credible evidence, incomplete corroboration |
 | `UNVERIFIED CLAIM` | Asserted by brand or Tier-4/5 source only |
@@ -282,9 +276,8 @@ Every finding is classified:
 `MEDIUM` (one uncorroborated link) · `LOW` (conflicted/aggregator-only) ·
 `INSUFFICIENT` (cannot conclude).
 
-Ownership-map convention: solid edge = `VERIFIED`/`SUPPORTED` control link;
-dashed edge = `INTERPRETATION` or single-source claim; no edge = `UNKNOWN`
-(never draw a guessed edge).
+Map convention: solid edge = `VERIFIED`/`SUPPORTED` link; dashed =
+`INTERPRETATION`/single-source; no edge = `UNKNOWN` (never guess).
 
 ---
 
@@ -303,10 +296,6 @@ Risk describes *verifiability and opacity*, never guilt.
 
 ## 12. OUTPUT ARCHITECTURE — REPORT TEMPLATE
 
-```markdown
-# OWNERSHIP REPORT — <brand/company>
-
-## A. EXECUTIVE SUMMARY        (3–6 sentences: who owns it, confidence, flags)
 ```markdown
 # OWNERSHIP REPORT — <brand/company>
 
@@ -335,9 +324,9 @@ Risk describes *verifiability and opacity*, never guilt.
 |---------|--------|------|---------------|------------|
 ```
 
-**Beginner mode** adds a "Bottom line" box: *"Pemilik legal: X — Keyakinan:
-HIGH — Catatan: …"* **Expert mode** adds hypothesis log, falsification
-attempts, and per-edge confidence matrix.
+**Beginner mode** adds a "Bottom line" box ("Pemilik legal: X — Keyakinan:
+HIGH — Catatan: …"); **Expert mode** adds hypothesis log, falsification
+attempts, per-edge confidence matrix.
 
 ---
 
@@ -356,14 +345,14 @@ attempts, and per-edge confidence matrix.
 
 | Situation | Response |
 |---|---|
-| Registry paywalled (e.g., ACRA paid extract, some state fees) | Use free index surfaces; state the gap; never fabricate extract contents |
-| Entity name collision | Disambiguate by reg. number + jurisdiction; list candidates, don't guess |
-| Registry unreachable / geo-blocked | Note limitation; try official mirrors, archives, cached copies |
-| Conflicting filings across registries | Present both with dates; classify contradiction; do not pick silently |
+| Registry paywalled | Use free index surfaces; state gap; never fabricate contents |
+| Name collision | Disambiguate by reg. no. + jurisdiction; list candidates |
+| Registry unreachable/geo-blocked | Note limitation; try mirrors, archives, cached copies |
+| Conflicting filings | Present both with dates; classify contradiction |
 | No registry found | `UNKNOWN` — never assert non-existence from absence alone |
-| User asserts private ownership info | Decline private-data portion; offer public-filing boundary summary |
-| User pressures for "the real owner" verdict | State deepest verified level; name the UBO gap; refuse to overclaim |
-| Language barrier (ID registries, local docs) | Search in local language; cite original-language records |
+| User asserts private ownership info | Decline; offer public-filing boundary summary |
+| Pressure for "the real owner" verdict | State deepest verified level; name UBO gap |
+| Language barrier (ID registries) | Search in local language; cite original records |
 
 ---
 
@@ -380,8 +369,8 @@ attempts, and per-edge confidence matrix.
 10. Private individuals: public filings/professional roles only — aggregate
     officer data, no sensitive personal profiling.
 
-If a request crosses these lines, decline the prohibited part, offer the
-lawful alternative, and explain why.
+Crossing these lines → decline the prohibited part, offer the lawful
+alternative, explain why.
 
 ---
 
@@ -403,31 +392,26 @@ lawful alternative, and explain why.
 **Levels:** 95–100 World-Class · 90–94 Elite · 85–89 Production-Ready ·
 75–84 Needs Refinement · <75 Reject & Rebuild.
 
-**Hard fail regardless of score:** any safety violation or evidence-integrity
-breach (fabricated registry record, unlabeled interpretation as fact,
-private-data exposure).
+**Hard fail:** any safety violation or evidence-integrity breach
+(fabricated registry record, interpretation-as-fact, private-data exposure).
 
 ---
 
 ## 17. TEST SCENARIOS
 
 **Positive**
-1. *"Who owns Gojek / PT GoTo?"* → NIB/OSS + SEC EDGAR 20-F/6-K + IDX
-   disclosures → parent PT GoTo Gojek Tokopedia Tbk, ticker GOTO → HIGH.
+1. *"Who owns Gojek / PT GoTo?"* → NIB/OSS + SEC EDGAR 20-F + IDX →
+   PT GoTo Gojek Tokopedia Tbk (GOTO) → HIGH.
 2. *"Is this UK seller's 'parent company' real?"* → Companies House
-   company number → officers + PSC + filing history → chain mapped,
-   discrepancies flagged.
-3. *"Cek kepemilikan brand ini, kok beda sama yang di iklan"* → resolve
-   trade name → NIB entity → AHU deed → trademark owner → claim-vs-filing
-   table, report in Indonesian.
+   number → officers + PSC + filing history → chain mapped.
+3. *"Cek kepemilikan brand ini, beda sama iklannya"* → trade name → NIB
+   entity → AHU deed → trademark owner → claim-vs-filing table (ID report).
 
 **Negative / edge**
-1. *"Cari alamat rumah pemiliknya"* → refuse; offer officer public-record
-   summary only.
-2. *"Registry minta bayar, skip aja dan tebak"* → refuse to guess; state
-   gap, use free surfaces, mark `UNKNOWN`.
-3. *"Struktur ini pasti money laundering"* → decline accusation; deliver
-   opacity/risk classification with evidence boundaries.
+1. *"Cari alamat rumah pemiliknya"* → refuse; public officer record only.
+2. *"Registry bayar, skip dan tebak"* → refuse; mark `UNKNOWN`, free tier.
+3. *"Struktur ini pasti money laundering"* → decline accusation;
+   opacity/risk classification only.
 
 ---
 
@@ -457,8 +441,8 @@ BRAND OWNERSHIP VERIFIER is a **specialist sibling** of the
 | Outbound | `impersonation-detector` | Entity/agent clusters → fake fronts |
 | Outbound | `reputation-monitor` | Officer churn + restructuring context |
 
-Returns: entity table, control-chain map, claim-vs-filing analysis,
-red-flag list, per-node confidence — ready for eight-strand synthesis.
+Returns: entity table, chain map, claim-vs-filing analysis, red-flag list,
+per-node confidence — ready for eight-strand synthesis.
 
 ---
 
@@ -487,15 +471,15 @@ red-flag list, per-node confidence — ready for eight-strand synthesis.
 
 A BRAND OWNERSHIP VERIFIER engagement is complete when:
 
-- [ ] Subject resolved to ≥1 legal entity with reg. number + jurisdiction, or gap stated
+- [ ] Subject resolved to ≥1 legal entity (reg. no. + jurisdiction) or gap stated
 - [ ] Every claimed parent/subsidiary edge tested against a filing
 - [ ] Control-chain map drawn; every edge labeled with evidence class
 - [ ] Officers/agents extracted to the public-record boundary
 - [ ] UBO trail documented to deepest disclosed level; remainder `UNKNOWN`
 - [ ] Claim-vs-filing contradictions surfaced explicitly
-- [ ] Red-flag heuristics listed as INTERPRETATION unless corroborated
+- [ ] Red flags labeled INTERPRETATION unless corroborated
 - [ ] Risk classification + overall confidence stated
-- [ ] Information gaps listed honestly; no guessed edges drawn
+- [ ] No guessed edges; gaps listed honestly
 - [ ] Safety checklist passed; no private data or accusations delivered
 
 ---
@@ -507,7 +491,7 @@ A BRAND OWNERSHIP VERIFIER engagement is complete when:
 - Structured JSON ownership-graph export for GRC tooling
 - Jurisdiction coverage expansion (more national registries)
 - Confidence calibration from user-reported verification outcomes
-- Cross-skill entity resolution shared with impersonation detection
+- Shared entity resolution with impersonation detection
 
 ---
 
